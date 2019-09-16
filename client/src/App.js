@@ -1,28 +1,28 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
+import PlayerList from "./components/PlayerList";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      players: []
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     players: []
+  //   };
+  // }
 
-  componentDidMount() {
-    fetch("http://localhost:5000/api/players")
-      .then(res => res.json())
-      .then(players => this.setState({ players }))
-      .catch(err => console.log("Error on Fetch: ", err));
-  }
+  // componentDidMount() {
+  //   fetch("http://localhost:5000/api/players")
+  //     .then(res => res.json())
+  //     .then(players => this.setState({ players }))
+  //     .catch(err => console.log("Error on Fetch: ", err));
+  // }
 
   render() {
     return (
       <div id="App">
         <Navbar />
-        <h1>React App Ready</h1>
-        <div id="PlayerList" data-testid="PlayerList">
+        {/* <div id="PlayerList" data-testid="PlayerList">
           {this.state.players.map(player => {
             return (
               <div key={player.id}>
@@ -32,7 +32,8 @@ class App extends React.Component {
               </div>
             );
           })}
-        </div>
+        </div> */}
+        <PlayerList />
       </div>
     );
   }

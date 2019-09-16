@@ -1,0 +1,41 @@
+.navbar {
+  align-items: center;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  display: flex;
+  height: 70px;
+  justify-content: space-around;
+  width: 100%;
+  box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
+}
+
+.dark-mode__toggle {
+  background: whitesmoke;
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 20px;
+  position: relative;
+  width: 40px;
+}
+
+.toggle {
+  background: grey;
+  border-radius: 50px;
+  height: 18px;
+  top: 1px;
+  left: 1px;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+}
+
+.toggled {
+  left: 18px;
+  background: lime;
+}
+
+.dark-mode {
+  background: #333333;
+  color: white;
+}

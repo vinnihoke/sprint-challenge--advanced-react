@@ -4,23 +4,33 @@ import "@testing-library/jest-dom/extend-expect";
 
 import App from "./App";
 import PlayerList from "./components/PlayerList";
+import { waitForElement } from "@testing-library/react";
 
 describe("Checking within App", () => {
   test("App renders without crashing", () => {
     rtl.render(<App />);
   });
 
-  test("App contains specific Players", () => {
+  test("App contains Alex Morgan", async () => {
     const wrapper = rtl.render(<App />);
-    // const player = wrapper.queryByText(/alex morgan/i);
-    // expect(player).toBeTruthy();
-    console.log(wrapper.debug());
+    const player = await waitForElement(() =>
+      wrapper.queryByText(/alex morgan/i)
+    );
+    expect(player).toBeTruthy();
   });
-
-  test("App contains title", () => {
+  test("App contains Megan Rapinoe", async () => {
     const wrapper = rtl.render(<App />);
-    const h1 = wrapper.getByText(/Womens World Cup Players/i);
-    expect(h1).toBeInTheDocument();
+    const player = await waitForElement(() =>
+      wrapper.queryByText(/megan rapinoe/i)
+    );
+    expect(player).toBeTruthy();
+  });
+  test("App contains Carli Lloyd", async () => {
+    const wrapper = rtl.render(<App />);
+    const player = await waitForElement(() =>
+      wrapper.queryByText(/carli lloyd/i)
+    );
+    expect(player).toBeTruthy();
   });
 });
 
